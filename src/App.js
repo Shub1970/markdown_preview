@@ -73,7 +73,7 @@ function App() {
         </div>
         <div
           id="preview"
-          dangerouslySetInnerHTML={{ __html: marked.Parser(edit) }}
+          dangerouslySetInnerHTML={{ __html: marked(edit) }}
         ></div>
       </div>
     </div>
