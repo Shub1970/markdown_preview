@@ -48,7 +48,6 @@ And here. | Okay. | I think we get it.
 
 function App() {
   const [edit, setEdit] = useState(defau);
-  const html = marked(edit);
   const handelChange = (e) => {
     setEdit(e.target.value);
   };
@@ -72,7 +71,10 @@ function App() {
           <h3>previewWrap</h3>
           <i class="fas fa-arrows-alt"></i>
         </div>
-        <div id="preview" dangerouslySetInnerHTML={{ __html: html }}></div>
+        <div
+          id="preview"
+          dangerouslySetInnerHTML={{ __html: marked.Parser(edit) }}
+        ></div>
       </div>
     </div>
   );
